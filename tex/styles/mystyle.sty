@@ -1,0 +1,131 @@
+\ProvidesPackage{mystyle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bbm}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{epsfig,psfrag}
+\usepackage{color}
+
+\usepackage[margin=1in]{geometry}
+
+% ... for figures
+\usepackage{subfig}
+\usepackage{caption}
+%\usepackage{subcaption} ... can't be used w/ subfig?
+\graphicspath{{./}{PFigs/}{figs/}}
+
+\usepackage{url}
+
+% ... for theorems
+\theoremstyle{plain}
+\newtheorem{prob}{Problem}
+\newtheorem{introtheorem}{Theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{openq}[theorem]{Open Question}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{remark}
+\newtheorem{remark}[section]{Remarks}
+\newtheorem{discussion}[theorem]{Discussion}
+
+% ... for referencing
+\newcommand{\axref}[1]{Axiom~\ref{#1}}
+\newcommand{\conjref}[1]{Conjecture~\ref{#1}}
+\newcommand{\corref}[1]{Corollary~\ref{#1}}
+\newcommand{\defref}[1]{Definition~\ref{#1}}
+\newcommand{\exref}[1]{Example~\ref{#1}}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{#1}}
+\newcommand{\probref}[1]{Problem~\ref{#1}}
+\newcommand{\propref}[1]{Proposition~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\thmref}[1]{Theorem~\ref{#1}}
+\newcommand{\queref}[1]{Question~\ref{#1}}
+\newcommand{\remref}[1]{Remark~\ref{#1}}
+\newcommand{\remsref}[1]{Remarks~\ref{#1}}
+
+\newcommand{\denselist}{\itemsep 0pt\parsep=1pt\partopsep 0pt}
+
+% ... math
+\def\ds{\displaystyle}
+\def\ss{\scriptscriptstyle}
+\def\QEDrule{\vrule height6.5pt width4pt depth.5pt}
+\def\prop{\mathop{\rm prop}}
+\def\QED{\unskip\nobreak\hskip6pt\QEDrule}
+\def\iff{\Longleftrightarrow}
+\def\isom{\cong}
+\def\sd{{\rtimes}}
+\def\implies{\Longrightarrow}
+\def\onlyif{\Longleftarrow}
+\def\ie{{\sl i.e.\/}}
+\newcommand{\V}{\bigvee}
+\def\C{{\mathbb C}}
+\def\Cspace{{\mathbb C}}
+\def\B{{\mathbb B}}
+\def\I{{\mathbb I}}
+\def\M{{\mathbb M}} % to represent a manifold
+\def\N{{\mathbb N}}
+\def\Q{{\mathbb Q}}
+\def\R{{\mathbb R}}
+\def\Rspace{{\mathbb R}} % since this is what Herbert uses
+\def\S{{\mathbb S}}
+\def\X{{\mathbb X}}
+\def\Z{{\mathbb Z}}
+\def\one{{\mathbbm{1}}}
+\def\Cproj{{\mathbb C}{\mathbb P}}
+\def\Rproj{{\mathbb R}{\mathbb P}}
+
+\def\aff{\mathrm{aff}}
+\def\aut{\mathrm{aut}}
+\def\cat0{\mathrm{cat}_0}
+\def\Der{\mathrm{Der}}
+\def\Hom{\mathrm{Hom}}
+\def\mesh{\mathrm{mesh}}
+\def\proj{\mathrm{proj}}
+\def\Rel{\mathrm{Rel}}
+\def\vol{\mathrm{vol}}
+
+\newcommand{\norm}[1]{\lVert #1 \rVert}
+
+
+% to fix hyphenation
+\hyphenation{op-tical net-works semi-conduc-tor IEEEtran dia-grams}
+
+% ... some things borrowed from Herbert:
+\newenvironment{result}[1]
+{\smallskip\begin{trivlist}%
+\item[\hspace{10pt} {\sc #1}.]%
+}
+{
+\end{trivlist}}
+
+\newcommand {\mm}[1] {\ifmmode{#1}\else{\mbox{\(#1\)}}\fi}
+\newcommand{\dist}[2]       {\mm{\|{#1}-{#2}\|}}
+\newcommand{\conv}[1]       {\mm{{\rm conv\,}{#1}}}
+\newcommand{\Fdist}[2]      {\mm{\mathcal{F}}({#1},{#2})}
+\newcommand{\Hdist}[2]      {\mm{\mathcal{H}}({#1},{#2})}
+\newcommand{\dotprod}[2]      {\langle {#1}, {#2} \rangle}
+
+\newcommand{\eop}{\hfill\usebox{\smallProofsym}}  %
+\newsavebox{\smallProofsym}                            % smallproofsymbol
+\savebox{\smallProofsym}                               %
+{%                                                     %
+   \begin{picture}(6,6)                                   %
+   \put(0,0){\framebox(6,6){}}                            %
+   \put(0,2){\framebox(4,4){}}                            %
+   \end{picture}                                          %
+}                                                      %
+
+% \usepackage{color}
+\newcommand{\todo}[1]{{\color{red}[[\textbf{XXX TODO: }#1]]}}
+\newcommand{\brittany}[1]{{\color{blue}[[\textbf{Brittany Says: }#1]]}}
+
